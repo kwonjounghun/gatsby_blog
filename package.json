@@ -1,0 +1,20 @@
+{
+  "name": "my-gatsby-blog",
+  "description": "jonghun-development-blog-by-gatsby",
+  "license": "MIT",
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
+  },
+  "dependencies": {
+    "gatsby": "^2.0.33",
+    "gatsby-link": "^2.0.6",
+    "gatsby-plugin-netlify-cms": "^3.0.7",
+    "gatsby-react-router-scroll": "^2.0.1",
+    "netlify-cms": "^2.2.0",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1"
+  }
+}
