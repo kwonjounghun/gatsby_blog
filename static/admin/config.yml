@@ -9,6 +9,7 @@ collections:
   - name: blog
     label: Blog
     folder: _posts/blog
+    category: default
     create: true
     fields:
       - { name: path, label: Path }
@@ -18,6 +19,7 @@ collections:
   - name: study
     label: Study
     folder: _posts/study
+    category: default
     create: true
     fields:
       - { name: path, label: Path }
