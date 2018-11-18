@@ -12,6 +12,7 @@ collections:
     category: default
     create: true
     fields:
+      - { name: category, label: Category, widget: select, options: ["post", "start", "first"]}
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
@@ -22,6 +23,7 @@ collections:
     category: default
     create: true
     fields:
+      - { name: category, label: Category, widget: select, options: ["post2", "start2", "first2"]}
       - { name: path, label: Path }
       - { name: date, label: Date, widget: date }
       - { name: title, label: Title }
