@@ -12,10 +12,13 @@ collections:
     category: default
     create: true
     fields:
-      - { name: category, label: Category, widget: select, options: ["post", "start", "first"]}
       - { name: path, label: Path }
-      - { name: date, label: Date, widget: date }
+      - { name: label, label: Label, widget: hidden, default: blog }
+      - { name: category, label: Category, widget: select, options: ["post", "start", "first"]}
+      - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
+      - { name: thumbnail, label: Thumbnail, widget: file, default: "/static/assets/sub06_contents02.jpg" }
+      - {label: "public", name: "Public", widget: "boolean", default: true}
       - { name: body, label: Body, widget: markdown }
   - name: study
     label: Study
@@ -23,8 +26,11 @@ collections:
     category: default
     create: true
     fields:
-      - { name: category, label: Category, widget: select, options: ["post2", "start2", "first2"]}
       - { name: path, label: Path }
-      - { name: date, label: Date, widget: date }
+      - { name: label, label: Label, widget: hidden, default: study }
+      - { name: category, label: Category, widget: select, options: ["post2", "start2", "first2"]}
+      - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
+      - { name: thumbnail, label: Thumbnail, widget: file, default: "/static/assets/sub06_contents02.jpg" }
+      - {label: "public", name: "Public", widget: "boolean", default: true}
       - { name: body, label: Body, widget: markdown }
