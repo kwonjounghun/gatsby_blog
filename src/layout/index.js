@@ -12,6 +12,22 @@ const GlobalStyle = createGlobalStyle`
     color: ${props => (props.whiteColor ? "white" : "black")};
     font-family: ${props => props.theme.Fonts.family};
   }
+
+  div, section, header, nav, footer, a {
+      box-sizing: border-box;
+  }
+
+  ul, ol, li{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+  }
+
+  .clearFix::after{
+      display: block;
+      content: "";
+      clear: both;
+  }
 `;
 
 export default ({ children }) => {
