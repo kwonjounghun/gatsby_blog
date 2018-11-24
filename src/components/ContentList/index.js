@@ -13,15 +13,12 @@ const List = styled.ul(props => {
 });
 
 class ContentList extends React.Component {
-  state = {
-    items: [1, 2, 3, 4, 5]
-  };
   render() {
     return (
       <ThemeProvider theme={Themes}>
         <List className="clearFix">
-          {this.state.items.map((item, index) => {
-            return <ContentItem key={`ContentItem${index}`} />;
+          {this.props.list.map((item, index) => {
+            return <ContentItem key={`ContentItem${index}`} item={item}/>;
           })}
         </List>
       </ThemeProvider>
