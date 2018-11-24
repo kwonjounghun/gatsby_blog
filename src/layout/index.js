@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     color: ${props => (props.whiteColor ? "white" : "black")};
     font-family: ${props => props.theme.Fonts.family};
+    background-color: gray;
   }
 
   div, section, header, nav, footer, a {
