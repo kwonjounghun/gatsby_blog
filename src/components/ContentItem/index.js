@@ -9,12 +9,11 @@ const Item = styled(Link)`
   width: 100%;
   position: relative;
   padding: ${PxtoRem(25)};
-  /* ${props => console.log(props)} */
   ${props => props.theme.Media.xlarge`padding-left: ${PxtoRem(200)};`}
   ${props => props.theme.Media.large`padding-left: ${PxtoRem(200)};`}
   ${props => props.theme.Media.desktop`padding-left: ${PxtoRem(200)};`}
   ${props => props.theme.Media.tablet`padding-left: ${PxtoRem(175)};`}
-  background-color: blue;
+  background-color: white;
   margin-bottom: ${PxtoRem(10)};
 `;
 
@@ -23,7 +22,6 @@ const Thumbnail = styled.div(props => {
     width: ${PxtoRem(100)};
     height: ${PxtoRem(200)};
     transition: all 0.2s;
-    background-color: red;
     margin-right: ${PxtoRem(50)};
     float: left;
     top: ${PxtoRem(25)};
@@ -45,22 +43,31 @@ const Thumbnail = styled.div(props => {
     top: 0;
     left: 0;
     `}
+    ${props.image ? `background-image: url("${props.image}");`: null}
+    background-size: cover;
+    background-position: center;
     `;
 });
 
 const ItemContent = styled.div`
-  background-color: purple;
   float: left;
 `;
 
 class ContentItem extends React.Component {
   render() {
+    console.log("item", this.props.item);
+    let {node} = this.props.item;
+    let {frontmatter, excerpt} = node;
+    let { thumbnail, date, title, category, path } = frontmatter;
     return (
       <li>
         <ThemeProvider theme={Themes}>
-          <Item className="clearFix" to="/">
-            <Thumbnail />
+          <Item className="clearFix" to={path}>
+            <Thumbnail image={thumbnail}/>
             <ItemContent className="clearFix">
+            <span>{category}</span>
+            <h1>{title}</h1>
+            <p>{excerpt}</p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
               ipsam rem sed! A ex illum cumque fuga nam facere illo minima
               nesciunt, aliquid similique, ut et ratione blanditiis harum
@@ -73,6 +80,7 @@ class ContentItem extends React.Component {
               laboriosam accusantium, incidunt molestiae laborum maiores hic
               quod repellendus laudantium possimus quos nobis dolores? Vel autem
               tempore architecto doloribus magni.
+              <p>{date}</p>
             </ItemContent>
           </Item>
         </ThemeProvider>
