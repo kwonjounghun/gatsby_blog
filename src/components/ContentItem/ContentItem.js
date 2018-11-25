@@ -98,7 +98,6 @@ const ItemContent = styled.div`
 
 class ContentItem extends React.Component {
   render() {
-    console.log("item", this.props.item);
     let { node } = this.props.item;
     let { frontmatter, excerpt } = node;
     let { thumbnail, date, title, category, path } = frontmatter;
