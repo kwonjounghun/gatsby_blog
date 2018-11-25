@@ -91,6 +91,7 @@ const Excerpt = styled.p`
 `;
 
 const ItemContent = styled.div`
+  width: 100%;
   float: left;
   position: relative;
 `;
