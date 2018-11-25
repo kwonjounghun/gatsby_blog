@@ -9,13 +9,31 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    color: ${props => (props.whiteColor ? "white" : "black")};
+    color: ${props => props.theme.GrayScale.scale6};
     font-family: ${props => props.theme.Fonts.family};
-    background-color: gray;
+    background-color: ${props => props.theme.GrayScale.scale1}
   }
 
   div, section, header, nav, footer, a {
       box-sizing: border-box;
+  }
+
+  p, h1, h2, h3, h4, span, div{
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      margin-bottom: 0.5em;
+      color: ${props => props.theme.GrayScale.scale6};
+  }
+
+  a, a:active, a:hover, a:link {
+      line-height: 1.6;
+      color: ${props => props.theme.GrayScale.scale6};
+      text-decoration: none;
+  }
+
+  h1, h2, h3, h4{
+    color: ${props => props.theme.GrayScale.scale9};
   }
 
   ul, ol, li{
@@ -29,9 +47,14 @@ const GlobalStyle = createGlobalStyle`
       content: "";
       clear: both;
   }
+ 
+  .material-icons {
+      font-family: 'Material Icons';
+      font-size: 24px;
+  }
 `;
 
-export default ({ children }) => {
+export default ({ children, site, NavMenu }) => {
   return (
     <>
       <Helmet>
@@ -44,7 +67,7 @@ export default ({ children }) => {
       <ThemeProvider theme={Themes}>
         <div className="app-wrapper">
           <GlobalStyle />
-          <Header />
+          <Header title={site.title} NavMenu={NavMenu}/>
           <Content>{children}</Content>
         </div>
       </ThemeProvider>
