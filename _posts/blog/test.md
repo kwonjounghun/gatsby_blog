@@ -1,5 +1,5 @@
 ---
-path: t1
+path: /t1
 label: blog
 category: post
 date: 2018-11-23T08:23:08.109Z
