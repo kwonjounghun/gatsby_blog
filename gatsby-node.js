@@ -7,8 +7,10 @@ exports.createPages = async ({ actions, graphql }) => {
   const blogListPageTemplate = path.resolve(
     `src/templates/blogListTemplate.js`
   );
+  const blogRootListPageTemplate = path.resolve(`src/templates/blogRootListTemplate.js`);
 
   const createListPageFn = async (NavMenu, result, category) => {
+    let component = category ? blogListPageTemplate : blogRootListPageTemplate;
     const postLimit = 10;
     let current = 1;
     const edge = result.data.allMarkdownRemark.edges;
@@ -25,7 +27,7 @@ exports.createPages = async ({ actions, graphql }) => {
       }
       createPage({
         path: path,
-        component: blogListPageTemplate,
+        component,
         context: {
           NavMenu,
           postLimit: postLimit,
@@ -67,6 +69,7 @@ exports.createPages = async ({ actions, graphql }) => {
   };
 
   const createCategoryListPage = async (NavMenu, category) => {
+    console.log("category", category);
     return graphql(`
       {
         allMarkdownRemark(
