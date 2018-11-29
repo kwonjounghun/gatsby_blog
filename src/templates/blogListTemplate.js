@@ -40,13 +40,14 @@ export default function Template({
 }
 
 export const pageQuery = graphql`
-  query($skip: Int!, $postLimit: Int!) {
+  query($skip: Int!, $postLimit: Int!, $category: String!) {
     site {
       siteMetadata {
         title
       }
     }
     allMarkdownRemark(
+      filter: {frontmatter: { category: { eq: $category }}}
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $postLimit
       skip: $skip
