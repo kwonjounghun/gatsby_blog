@@ -5,6 +5,7 @@ import Layout from "../layout";
 import PxtoRem from "../modules/PxtoRem";
 import themes from "../styled-components/themes";
 import Helmet from "react-helmet";
+import MarkDownStyle from "../../static/assets/style/markdown.css";
 
 
 const Content = styled.div`
@@ -26,7 +27,7 @@ export default function Template({
       <ThemeProvider theme={themes}>
         <Content>
           <Helmet>
-            <link src="/static/assets/style/markdown.css"/>
+            <link src={MarkDownStyle}/>
           </Helmet>
           <div className="blog-post-container">
             <div className="blog-post">
