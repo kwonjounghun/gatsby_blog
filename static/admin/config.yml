@@ -12,8 +12,8 @@ collections:
     category: default
     create: true
     fields:
-      - { name: path, label: Path }
-      - { name: label, label: Label, widget: hidden, default: "blog" }
+      - { name: path, label: Path, default: "/blog/" }
+      - { name: label, label: Label, widget: hidden, default: "Blog" }
       - { name: category, label: Category, widget: select, options: ["post", "start", "first"]}
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
@@ -26,9 +26,23 @@ collections:
     category: default
     create: true
     fields:
-      - { name: path, label: Path }
-      - { name: label, label: Label, widget: hidden, default: "study" }
+      - { name: path, label: Path, default: "/study/" }
+      - { name: label, label: Label, widget: hidden, default: "Study" }
       - { name: category, label: Category, widget: select, options: ["post2", "start2", "first2"]}
+      - { name: date, label: Date, widget: datetime }
+      - { name: title, label: Title }
+      - { name: thumbnail, label: Thumbnail, widget: file, default: "/assets/sub06_contents02.jpg" }
+      - { label: "public", name: "Public", widget: "boolean", default: true }
+      - { name: body, label: Body, widget: markdown }
+  - name: project
+    label: Project
+    folder: _posts/project
+    category: default
+    create: true
+    fields:
+      - { name: path, label: Path, default: "/project/" }
+      - { name: label, label: Label, widget: hidden, default: "Project" }
+      - { name: category, label: Category, widget: select, options: ["StarTeacher"]}
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: thumbnail, label: Thumbnail, widget: file, default: "/assets/sub06_contents02.jpg" }
