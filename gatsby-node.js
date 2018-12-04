@@ -44,7 +44,7 @@ exports.createPages = async ({ actions, graphql }) => {
   const createListPage = async NavMenu => {
     return graphql(`
       {
-        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+        allMarkdownRemark(filter: {frontmatter: { public: { eq: ${true} }}}, sort: { order: DESC, fields: [frontmatter___date] }) {
           edges {
             node {
               excerpt
@@ -74,7 +74,7 @@ exports.createPages = async ({ actions, graphql }) => {
       {
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { category : { eq : "${category}" }}}
+          filter: { frontmatter: { category : { eq : "${category}" }}, public: { eq: ${true} }}}
         ) {
           edges {
             node {
