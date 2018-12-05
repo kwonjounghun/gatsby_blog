@@ -13,6 +13,7 @@ exports.createPages = async ({ actions, graphql }) => {
     let component = category ? blogListPageTemplate : blogRootListPageTemplate;
     const postLimit = 10;
     let current = 1;
+    if(!result.data.allMarkdownRemark) return;
     const edge = result.data.allMarkdownRemark.edges;
     const totalPost = edge.length;
     const totalPage = Math.ceil(totalPost / postLimit);
@@ -44,7 +45,7 @@ exports.createPages = async ({ actions, graphql }) => {
   const createListPage = async NavMenu => {
     return graphql(`
       {
-        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+        allMarkdownRemark(filter: {frontmatter: { Public: { eq: true }}}, sort: { order: DESC, fields: [frontmatter___date] }) {
           edges {
             node {
               excerpt
@@ -69,12 +70,11 @@ exports.createPages = async ({ actions, graphql }) => {
   };
 
   const createCategoryListPage = async (NavMenu, category) => {
-    console.log("category", category);
     return graphql(`
       {
         allMarkdownRemark(
           sort: { order: DESC, fields: [frontmatter___date] }
-          filter: { frontmatter: { category : { eq : "${category}" }}}
+          filter: { frontmatter: { category : { eq : "${category}" }, Public: { eq: true }}}
         ) {
           edges {
             node {
@@ -108,7 +108,10 @@ exports.createPages = async ({ actions, graphql }) => {
   const getCategory = async _ => {
     return graphql(`
       {
-        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+        allMarkdownRemark(
+          sort: { order: DESC, fields: [frontmatter___date] }
+          filter: {frontmatter: { Public: { eq: true }}}
+          ) {
           edges {
             node {
               frontmatter {
@@ -171,7 +174,10 @@ exports.createPages = async ({ actions, graphql }) => {
   const getNavMenu = async _ => {
     return graphql(`
       {
-        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+        allMarkdownRemark(
+          sort: { order: DESC, fields: [frontmatter___date] }
+          filter: {frontmatter: { Public: { eq: true }}}
+          ) {
           edges {
             node {
               frontmatter {

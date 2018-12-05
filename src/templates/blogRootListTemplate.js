@@ -50,6 +50,7 @@ export const pageQuery = graphql`
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $postLimit
       skip: $skip
+      filter: {frontmatter: { Public: { eq: true }}}
     ) {
       edges {
         node {

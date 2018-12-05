@@ -47,7 +47,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: {frontmatter: { category: { eq: $category }}}
+      filter: {frontmatter: { category: { eq: $category }, Public: { eq: true }}}
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $postLimit
       skip: $skip
