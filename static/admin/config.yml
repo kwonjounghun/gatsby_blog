@@ -28,7 +28,7 @@ collections:
     fields:
       - { name: path, label: Path, default: "/study/" }
       - { name: label, label: Label, widget: hidden, default: "Study" }
-      - { name: category, label: Category, widget: select, options: ["post2", "start2", "first2"]}
+      - { name: category, label: Category, widget: select, options: ["React", "Next.js", "Express.js", "Redux"]}
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: thumbnail, label: Thumbnail, widget: file, default: "/assets/sub06_contents02.jpg" }
