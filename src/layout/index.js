@@ -19,12 +19,15 @@ const GlobalStyle = createGlobalStyle`
       box-sizing: border-box;
   }
 
-  p, h1, h2, h3, h4, span, div{
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
+  p, h1, h2, h3, h4, span, div {
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: ${props => props.theme.GrayScale.scale6};
+  }
+
+  p, h1, h2, h3, h4, span{
       margin-bottom: 0.5em;
-      color: ${props => props.theme.GrayScale.scale6};
   }
 
   a, a:active, a:hover, a:link {

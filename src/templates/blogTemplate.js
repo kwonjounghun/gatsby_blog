@@ -2,6 +2,7 @@ import React from "react";
 import { graphql } from "gatsby";
 import styled, { ThemeProvider } from "styled-components";
 import Layout from "../layout";
+import OtherPost from "../components/OtherPost";
 import PxtoRem from "../modules/PxtoRem";
 import themes from "../styled-components/themes";
 import Helmet from "react-helmet";
@@ -47,7 +48,6 @@ const BlogDate = styled.h2`
 `;
 
 const Thumbnail = styled.div`
-${props => console.log(props)}
   width: 100%;
   padding-top: 60%;
   box-sizing: border-box;
@@ -66,14 +66,27 @@ ${props => console.log(props)}
     background-color: rgba(0,0,0,0.7);
   }
 `;
+
+const OtherPosts = styled.div`
+  width: 100%;
+  padding: ${PxtoRem(25)};
+  background-color: black;
+`;
 export default function Template({
   data, // this prop will be injected by the GraphQL query below.
   pathContext
 }) {
   const { markdownRemark } = data; // data.markdownRemark holds our post data
   const { frontmatter, html } = markdownRemark;
-  const { NavMenu } = pathContext;
-  console.log(frontmatter);
+  const { NavMenu, next, previous } = pathContext;
+  let posts = [previous, next];
+  let newPosts = [];
+  for(let i = 0; i < 2 ; i++) {
+    if(posts[i]){
+      newPosts.push(posts[i]);
+    }
+  }
+  console.log(posts);
   return (
     <Layout site={data.site.siteMetadata} NavMenu={NavMenu}>
       <ThemeProvider theme={themes}>
@@ -94,6 +107,11 @@ export default function Template({
               />
             </div>
           </BlogPost>
+          <OtherPosts className="clearFix">
+            {newPosts.map( (item, index) => {
+              return (<OtherPost key={`posts${index}`} post={item} index={index}/>);
+            })}
+          </OtherPosts>
         </Content>
       </ThemeProvider>
     </Layout>

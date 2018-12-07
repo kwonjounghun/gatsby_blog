@@ -13,7 +13,7 @@ exports.createPages = async ({ actions, graphql }) => {
     let component = category ? blogListPageTemplate : blogRootListPageTemplate;
     const postLimit = 10;
     let current = 1;
-    if(!result.data.allMarkdownRemark) return;
+    if (!result.data.allMarkdownRemark) return;
     const edge = result.data.allMarkdownRemark.edges;
     const totalPost = edge.length;
     const totalPage = Math.ceil(totalPost / postLimit);
@@ -62,11 +62,11 @@ exports.createPages = async ({ actions, graphql }) => {
         }
       }
     `).then(async result => {
-      if (result.errors) {
-        return Promise.reject(result.errors);
-      }
-      createListPageFn(NavMenu, result);
-    });
+        if (result.errors) {
+          return Promise.reject(result.errors);
+        }
+        createListPageFn(NavMenu, result);
+      });
   };
 
   const createCategoryListPage = async (NavMenu, category) => {
@@ -92,11 +92,11 @@ exports.createPages = async ({ actions, graphql }) => {
         }
       }
     `).then(async result => {
-      if (result.errors) {
-        return Promise.reject(result.errors);
-      }
-      await createListPageFn(NavMenu, result, category);
-    });
+        if (result.errors) {
+          return Promise.reject(result.errors);
+        }
+        await createListPageFn(NavMenu, result, category);
+      });
   };
 
   const createCategoryListPageFn = async (NavMenu, category) => {
@@ -122,14 +122,14 @@ exports.createPages = async ({ actions, graphql }) => {
         }
       }
     `).then(async result => {
-      if (result.errors) {
-        return Promise.reject(result.errors);
-      }
-      return DuplicateInspection(
-        result.data.allMarkdownRemark.edges,
-        "category"
-      );
-    });
+        if (result.errors) {
+          return Promise.reject(result.errors);
+        }
+        return DuplicateInspection(
+          result.data.allMarkdownRemark.edges,
+          "category"
+        );
+      });
   };
 
   const DuplicateInspection = (array, target) => {
@@ -144,31 +144,46 @@ exports.createPages = async ({ actions, graphql }) => {
   const createPostPage = async NavMenu => {
     return graphql(`
       {
-        allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+        allMarkdownRemark(
+          sort: { order: DESC, fields: [frontmatter___date] }
+          filter: {frontmatter: { Public: { eq: true }}}
+          ) {
           edges {
             node {
+              excerpt
               frontmatter {
-                path
+                path,
+                category,
+                label,
+                title,
+                thumbnail,
+                date(formatString: "MMMM DD, YYYY")
               }
             }
           }
         }
       }
     `).then(result => {
-      if (result.errors) {
-        return Promise.reject(result.errors);
-      }
+        if (result.errors) {
+          return Promise.reject(result.errors);
+        }
 
-      result.data.allMarkdownRemark.edges.forEach(({ node }) => {
-        createPage({
-          path: node.frontmatter.path,
-          component: blogPostTemplate,
-          context: {
-            NavMenu
-          } // additional data can be passed via context
+        const posts = result.data.allMarkdownRemark.edges;
+        posts.forEach(({ node }, index) => {
+          console.log(index);
+          const previous = index === posts.length - 1 ? false : posts[index + 1].node;
+          const next = index === 0 ? false : posts[index - 1].node;
+          createPage({
+            path: node.frontmatter.path,
+            component: blogPostTemplate,
+            context: {
+              NavMenu,
+              previous,
+              next
+            } // additional data can be passed via context
+          });
         });
       });
-    });
   };
 
   const getNavMenu = async _ => {
@@ -189,11 +204,11 @@ exports.createPages = async ({ actions, graphql }) => {
         }
       }
     `).then(result => {
-      if (result.errors) {
-        return Promise.reject(result.errors);
-      }
-      return result.data.allMarkdownRemark.edges;
-    });
+        if (result.errors) {
+          return Promise.reject(result.errors);
+        }
+        return result.data.allMarkdownRemark.edges;
+      });
   };
   const createNavMenu = async array => {
     let menu = [];
@@ -201,29 +216,29 @@ exports.createPages = async ({ actions, graphql }) => {
     // array는 menu key는 category, label
     let isKey = async (array, key) => {
       let result = false;
-      if(array.length === 0) return result;
-      for(let [index, item] of array.entries()){
-        if(item.key === key) return result = {index};
-        await setTimeout(()=>{}, 100);
+      if (array.length === 0) return result;
+      for (let [index, item] of array.entries()) {
+        if (item.key === key) return result = { index };
+        await setTimeout(() => { }, 100);
       }
       return result;
     };
 
     // array는 array, menu는 menu
     let addMenuItem = async (array, menu, isKey) => {
-      for(let item of array){
-        let {label, category} = item.node.frontmatter;
+      for (let item of array) {
+        let { label, category } = item.node.frontmatter;
         let isIndex = await isKey(menu, label);
-        if(isIndex) {
+        if (isIndex) {
           // key가 이미 존재할 경우
           let isCateIndex = await isKey(menu[isIndex.index].list, category);
           if (isCateIndex) {
             menu[isIndex.index].list[isCateIndex.index].count += 1;
           } else {
-            menu[isIndex.index].list.push({key: category, count: 1});
+            menu[isIndex.index].list.push({ key: category, count: 1 });
           }
         } else {
-          menu.push({key: label, list: [{key: category, count: 1}]});
+          menu.push({ key: label, list: [{ key: category, count: 1 }] });
         }
       }
     }
