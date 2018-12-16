@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import Themes from "../styled-components/themes";
 import Helmet from "react-helmet";
 import { Content } from "../styled-components/Common";
@@ -79,6 +80,7 @@ export default ({ children, site, NavMenu }) => {
           <GlobalStyle />
           <Header title={site.title} NavMenu={NavMenu}/>
           <LayOutContent>{children}</LayOutContent>
+          <Footer/>
         </div>
       </ThemeProvider>
     </>
