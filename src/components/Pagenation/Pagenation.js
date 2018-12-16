@@ -8,6 +8,7 @@ const Content = styled.div`
   position: relative;
   height: ${PxtoRem(50)};
   margin-top: ${PxtoRem(50)};
+  margin-bottom: ${PxtoRem(50)};
 `;
 
 const PageList = styled.ul`

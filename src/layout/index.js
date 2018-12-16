@@ -57,6 +57,29 @@ const GlobalStyle = createGlobalStyle`
       font-family: 'Material Icons';
       font-size: 24px;
   }
+
+  /* width */
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888; 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+  border-radius: 5px;
+}
 `;
 
 const LayOutContent = styled(Content)`
