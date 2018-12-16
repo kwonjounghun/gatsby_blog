@@ -14,7 +14,7 @@ collections:
     fields:
       - { name: path, label: Path, default: "/blog/" }
       - { name: label, label: Label, widget: hidden, default: "Blog" }
-      - { name: category, label: Category, widget: select, options: ["post", "start", "first"]}
+      - { name: category, label: Category, widget: select, options: ["1DAY", "1WEEK", "1MONTH"]}
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: thumbnail, label: Thumbnail, widget: file, default: "/assets/sub06_contents02.jpg" }
@@ -28,7 +28,7 @@ collections:
     fields:
       - { name: path, label: Path, default: "/study/" }
       - { name: label, label: Label, widget: hidden, default: "Study" }
-      - { name: category, label: Category, widget: select, options: ["React", "Next.js", "Express.js", "Redux"]}
+      - { name: category, label: Category, widget: select, options: ["Web", "React", "Next.js", "Express.js", "Redux", "Webpack", "Babel", "HTTP", "AWS"]}
       - { name: date, label: Date, widget: datetime }
       - { name: title, label: Title }
       - { name: thumbnail, label: Thumbnail, widget: file, default: "/assets/sub06_contents02.jpg" }
