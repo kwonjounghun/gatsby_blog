@@ -1,6 +1,6 @@
 ---
 path: /t6
-label: blog
+label: Blog
 category: post
 date: 2018-11-23T08:23:08.109Z
 title: test
