@@ -13,9 +13,9 @@ const Item = styled(Link)`
   ${props => props.theme.Media.large`padding-left: ${PxtoRem(170)};`}
   ${props => props.theme.Media.desktop`padding-left: ${PxtoRem(170)};`}
   ${props => props.theme.Media.tablet`padding-left: ${PxtoRem(155)};`}
-  background-color: white;
+  background-color: ${props => props.theme.Color.dark.content};
   margin-bottom: ${PxtoRem(10)};
-  border-bottom: 1px solid ${props => props.theme.GrayScale.scale3};
+  /* border-bottom: 1px solid ${props => props.theme.GrayScale.scale3}; */
   box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1);
   &:hover{
       &::before{

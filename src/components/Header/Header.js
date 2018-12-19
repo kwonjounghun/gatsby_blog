@@ -52,7 +52,7 @@ const NaviList = styled.ul`
   height: 100%;
   padding: ${PxtoRem(25)};
   box-sizing: border-box;
-  background-color: white;
+  background-color: ${props => props.theme.Color.dark.content};
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1);
   h2{
     border-bottom: 1px solid black;

@@ -11,9 +11,9 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    color: ${props => props.theme.GrayScale.scale6};
+    color: ${props => props.theme.GrayScale.scale0};
     font-family: ${props => props.theme.Fonts.family};
-    background-color: ${props => props.theme.GrayScale.scale1}
+    background-color: ${props => props.theme.Color.dark.background}
   }
 
   div, section, header, nav, footer, a {
@@ -38,7 +38,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2, h3, h4{
-    color: ${props => props.theme.GrayScale.scale9};
+    color: ${props => props.theme.GrayScale.scale0};
   }
 
   ul, ol, li{

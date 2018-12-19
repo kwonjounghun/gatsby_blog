@@ -24,7 +24,7 @@ const PageList = styled.ul`
 
 const ListItem = styled(Link)`
   display: block;
-  background-color: white;
+  background-color: ${props => props.theme.Color.dark.content};
   width: ${PxtoRem(45)};
   height: ${PxtoRem(45)};
   line-height: ${PxtoRem(45)};

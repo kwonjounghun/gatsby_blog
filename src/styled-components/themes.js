@@ -3,6 +3,10 @@ import PxtoRem from "../modules/PxtoRem";
 
 class Themes {
   Color = {
+    dark:{
+      background: "#33333d",
+      content: "#373740"
+    },
     main: {
       basic: "red",
       dark: "red",
