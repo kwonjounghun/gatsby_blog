@@ -19,7 +19,7 @@ const Content = styled.div`
 const BlogPost = styled.div`
   display: block;
   width: 100%;
-  background-color: white;
+  background-color: ${props => props.theme.Color.dark.content};
 `;
 
 const BlogInfo = styled.div`

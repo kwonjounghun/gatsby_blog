@@ -23,13 +23,13 @@ const Item = styled(Link)`
           content: "";
           width: 2px;
           height: 100%;
-          background-color: red;
+          background-color: ${props => props.theme.Color.main.basic};
           position: absolute;
           top: 0;
           left: 0; 
       }
       h1{
-          color: red;
+          /* color: ${props => props.theme.Color.main.basic}; */
       }
   }
 `;

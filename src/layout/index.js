@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: ${props => props.theme.GrayScale.scale6};
+    color: ${props => props.theme.GrayScale.scale4};
   }
 
   p, h1, h2, h3, h4, span{
@@ -33,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
 
   a, a:active, a:hover, a:link {
       line-height: 1.6;
-      color: ${props => props.theme.GrayScale.scale6};
+      color: ${props => props.theme.GrayScale.scale4};
       text-decoration: none;
   }
 

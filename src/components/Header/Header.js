@@ -7,7 +7,7 @@ import PxtoRem from "../../modules/PxtoRem";
 const HeaderSection = styled.header`
   width: 100%;
   height: ${PxtoRem(80)};
-  background-color: black;
+  background-color: ${props => props.theme.Color.dark.content};
   right: 0;
   top: 0;
   box-shadow: 0px -3px 15px 2px ${props => props.theme.GrayScale.scale9};

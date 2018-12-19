@@ -8,9 +8,9 @@ class Themes {
       content: "#373740"
     },
     main: {
-      basic: "red",
-      dark: "red",
-      light: "red"
+      basic: "#fb4180",
+      dark: "#fb4180",
+      light: "#fb4180"
     },
     sub: {
       basic: "blue",

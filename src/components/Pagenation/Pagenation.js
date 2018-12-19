@@ -30,7 +30,8 @@ const ListItem = styled(Link)`
   line-height: ${PxtoRem(45)};
   box-sizing: content-box;
   text-align: center;
-  border-bottom: 3px solid ${props => props.theme.GrayScale.scale5};
+  border-bottom: 3px solid ${props => props.theme.GrayScale.scale4};
+  color: ${props => props.theme.GrayScale.scale4};
   box-shadow: 0px 2px 10px 2px rgba(0,0,0,0.1);
   ${props => props.theme.Media.phone`width: ${PxtoRem(30)};
   height: ${PxtoRem(30)};
@@ -40,10 +41,10 @@ const ListItem = styled(Link)`
     ${props => props.theme.Media.phone`line-height: ${PxtoRem(30)};`}
   }
   &:hover{
-      color: red;
-      border-color: red;
+      color: ${props => props.theme.Color.main.basic};
+      border-color: ${props => props.theme.Color.main.basic};
   }
-  ${props => (props.active === "active" ? "border-color: red; color: red; font-weight: 700;" : "")}
+  ${props => (props.active === "active" ? `border-color: ${props.theme.Color.main.basic}; color: ${props.theme.Color.main.basic}; font-weight: 700;` : "")}
 `;
 
 class Pagenation extends React.Component {
