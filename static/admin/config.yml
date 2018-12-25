@@ -20,6 +20,7 @@ collections:
       - { name: thumbnail, label: Thumbnail, widget: file, default: "/assets/sub06_contents02.jpg" }
       - { label: "public", name: "Public", widget: "boolean", default: true }
       - { name: body, label: Body, widget: markdown }
+      - { name: tag, label: Tag, widget: "list", default: ["Blog"] }
   - name: study
     label: Study
     folder: _posts/study
@@ -34,6 +35,7 @@ collections:
       - { name: thumbnail, label: Thumbnail, widget: file, default: "/assets/sub06_contents02.jpg" }
       - { label: "public", name: "Public", widget: "boolean", default: true }
       - { name: body, label: Body, widget: markdown }
+      - { name: tag, label: Tag, widget: "list", default: ["Study"] }
   - name: project
     label: Project
     folder: _posts/project
@@ -48,3 +50,4 @@ collections:
       - { name: thumbnail, label: Thumbnail, widget: file, default: "/assets/sub06_contents02.jpg" }
       - { label: "public", name: "Public", widget: "boolean", default: true }
       - { name: body, label: Body, widget: markdown }
+      - { name: tag, label: Tag, widget: "list", default: ["Project"] }
