@@ -1,6 +1,7 @@
 import React from "react";
 import ContentItem from "../ContentItem";
 import styled from "styled-components";
+import PxtoRem from "../../modules/PxtoRem";
 
 const List = styled.ul`
   width: 100%;
