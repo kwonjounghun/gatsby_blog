@@ -1,11 +1,13 @@
 ---
 path: /blog/test
 label: Blog
-category: post
+category: 1DAY
 date: 2018-11-20T07:27:25.117Z
 title: ddddd
 thumbnail: /assets/sub06_contents02.jpg
 Public: true
+tag:
+  - test
 ---
 # This is title
 
@@ -33,5 +35,10 @@ const value = functino () => {
 `code`
 
 ![test img](/assets/sub06_contents02.jpg)
+
+
+|하이 | 내용|
+|그래요 | 그렇습니다.|
+
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Sintipsam rem sed! A ex illum cumque fuga nam facere illo minima nesciunt, aliquid similique, ut et ratione blanditiis harum explicabo incidunt maxime alias beatae corrupti quia earum rerum doloribus. Labore, recusandae voluptatem nobis excepturi, nemo, exdoloribus modi numquam quasi fuga enim reprehenderit ipsam animiassumenda vitae! Magni, repellat? Dolor esse architecto consectetur eum expedita dolorum numquam soluta sed, earum a error asperiores neque, assumenda tenetur culpa. Soluta dolor accusamus laboriosam accusantium, incidunt molestiae laborum maiores hicquod repellendus laudantium possimus quos nobis dolores? Vel autemtempore architecto doloribus magni.
