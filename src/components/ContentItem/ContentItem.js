@@ -17,21 +17,16 @@ const Item = styled(Link)`
   margin-bottom: ${PxtoRem(10)};
   /* border-bottom: 1px solid ${props => props.theme.GrayScale.scale3}; */
   box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1);
-  &:hover{
-      &::before{
-          display: block;
-          content: "";
-          width: 2px;
-          height: 100%;
-          background-color: ${props => props.theme.Color.main.basic};
-          position: absolute;
-          top: 0;
-          left: 0; 
-      }
-      h1{
-          /* color: ${props => props.theme.Color.main.basic}; */
-      }
-  }
+  &::before{
+      display: block;
+      content: "";
+      width: 2px;
+      height: 100%;
+      background-color: ${props => props.theme.Color.main.basic};
+      position: absolute;
+      top: 0;
+      left: 0; 
+  };
 `;
 
 const Thumbnail = styled.div(props => {
