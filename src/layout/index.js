@@ -1,11 +1,9 @@
 import React from "react";
-import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Themes from "../styled-components/themes";
 import Helmet from "react-helmet";
-import { Content } from "../styled-components/Common";
-import PxtoRem from "../modules/PxtoRem";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -82,11 +80,6 @@ const GlobalStyle = createGlobalStyle`
 }
 `;
 
-const LayOutContent = styled(Content)`
-  ${props => props.theme.Media.large`margin-top: 0;`}
-  ${props => props.theme.Media.xlarge`margin-top: 0;`}
-`;
-
 export default ({ children, site, NavMenu }) => {
   return (
     <>
@@ -100,10 +93,8 @@ export default ({ children, site, NavMenu }) => {
       <ThemeProvider theme={Themes}>
         <div className="app-wrapper">
           <GlobalStyle />
-          <LayOutContent>
-            <Header title={site.title} NavMenu={NavMenu}/>
+          <Header title={site.title} NavMenu={NavMenu}/>
             {children}
-          </LayOutContent>
         </div>
       </ThemeProvider>
     </>

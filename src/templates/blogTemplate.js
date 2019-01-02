@@ -1,6 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-import styled, { ThemeProvider } from "styled-components";
+import styled from "styled-components";
 import Layout from "../layout";
 import OtherPost from "../components/OtherPost";
 import PxtoRem from "../modules/PxtoRem";
@@ -8,12 +8,42 @@ import themes from "../styled-components/themes";
 import Helmet from "react-helmet";
 import MarkDownStyle from "../../static/assets/style/markdown.css";
 
-const Content = styled.div`
-  margin-top: ${PxtoRem(25)};
+const Box = styled.div`
+  padding-top: ${PxtoRem(80)};
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  ${props =>
+    props.theme.Media
+      .xlarge`position: absolute; padding-top: 0; padding-left: ${PxtoRem(
+      600
+    )}; height: 100vh;`}
+  ${props =>
+    props.theme.Media
+      .large`position: absolute; padding-top: 0; padding-left: ${PxtoRem(
+      400
+    )}; height: 100vh;`}
+  ${props =>
+    props.theme.Media
+      .desktop`position: absolute; padding-top: 0; padding-left: ${PxtoRem(
+      250
+    )}; height: 100vh;`}
+`;
+
+const Wrap = styled.div`
   width: 100%;
-  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  overflow-y: auto;
+  position: relative;
+`;
+
+const Content = styled.div`
   ${props => props.theme.Media.xlarge`width: ${PxtoRem(800)};`}
   ${props => props.theme.Media.large`width: ${PxtoRem(800)};`}
+  ${props => props.theme.Media.desktop`width: ${PxtoRem(700)};`}
 `;
 
 const BlogPost = styled.div`
@@ -137,44 +167,47 @@ export default function Template({
       newPosts.push(posts[i]);
     }
   }
-  console.log("?", data);
   return (
     <Layout site={data.site.siteMetadata} NavMenu={NavMenu}>
-      <ThemeProvider theme={themes}>
-        <Content>
-          <Helmet>
-            <title>{frontmatter.title}</title>
-            <meta property="og:type" content="website" />
-            <meta property="og:title" content={frontmatter.title} />
-            <meta property="og:discription" content={excerpt} />
-            <link src={MarkDownStyle} />
-          </Helmet>
-          <BlogPost className="blog-post-container">
-            <div className="blog-post">
-              <BlogInfo>
-                <Thumbnail image={frontmatter.thumbnail}>
-                  <MainContent>
-                    <Category><span>{frontmatter.category}</span></Category>
-                    <Title>{frontmatter.title}</Title>
-                    <BlogDate>{frontmatter.date}</BlogDate>
-                  </MainContent>
-                </Thumbnail>
-              </BlogInfo>
-              <PostContent
-                className="blog-post-content markdown-body"
-                dangerouslySetInnerHTML={{ __html: html }}
-              />
-            </div>
-          </BlogPost>
-          <OtherPosts className="clearFix">
-            {newPosts.map((item, index) => {
-              return (
-                <OtherPost key={`posts${index}`} post={item} index={index} />
-              );
-            })}
-          </OtherPosts>
-        </Content>
-      </ThemeProvider>
+      <Helmet>
+        <title>{frontmatter.title}</title>
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content={frontmatter.title} />
+        <meta property="og:discription" content={excerpt} />
+        <link src={MarkDownStyle} />
+      </Helmet>
+      <Box>
+        <Wrap>
+          <Content>
+            <BlogPost className="blog-post-container">
+              <div className="blog-post">
+                <BlogInfo>
+                  <Thumbnail image={frontmatter.thumbnail}>
+                    <MainContent>
+                      <Category>
+                        <span>{frontmatter.category}</span>
+                      </Category>
+                      <Title>{frontmatter.title}</Title>
+                      <BlogDate>{frontmatter.date}</BlogDate>
+                    </MainContent>
+                  </Thumbnail>
+                </BlogInfo>
+                <PostContent
+                  className="blog-post-content markdown-body"
+                  dangerouslySetInnerHTML={{ __html: html }}
+                />
+              </div>
+            </BlogPost>
+            <OtherPosts className="clearFix">
+              {newPosts.map((item, index) => {
+                return (
+                  <OtherPost key={`posts${index}`} post={item} index={index} />
+                );
+              })}
+            </OtherPosts>
+          </Content>
+        </Wrap>
+      </Box>
     </Layout>
   );
 }

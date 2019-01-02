@@ -9,12 +9,12 @@ const HeaderSection = styled.header`
   height: 100vh;
   ${props => props.theme.Media.phone`width: 100%; height: ${PxtoRem(80)}`}
   ${props => props.theme.Media.tablet`width: 100%; height: ${PxtoRem(80)}`}
-  ${props => props.theme.Media.desktop`width: 100%; height: ${PxtoRem(80)}`}
   background-color: ${props => props.theme.Color.dark.content};
   top: 0;
   left: 0;
   box-shadow: 0px -3px 15px 2px ${props => props.theme.GrayScale.scale9};
   position: fixed;
+  ${props => props.theme.Media.desktop`position: absolute; padding-top: 0; width: ${PxtoRem(250)}; display: block;`}
   ${props => props.theme.Media.large`position: absolute; padding-top: 0; width: ${PxtoRem(400)}; display: block;`}
   ${props => props.theme.Media.xlarge`position: absolute; padding-top: 0; width: ${PxtoRem(600)}; display: block;`}
   z-index: 100;
@@ -23,12 +23,17 @@ const HeaderSection = styled.header`
 const Title = styled.h1`
   line-height: ${PxtoRem(80)};
   position: relative;
+  padding-right: ${PxtoRem(20)};
+  ${props => props.theme.Media.desktop`text-align: right;`}
+  ${props => props.theme.Media.large`text-align: right;`}
+  ${props => props.theme.Media.xlarge`text-align: right;`}
   z-index: 2;
 `;
 
 const NavContent = styled(Content)`
   position: relative;
   height: 100%;
+  ${props => props.theme.Media.desktop`width: 100%;`}
   ${props => props.theme.Media.large`width: 100%;`}
   ${props => props.theme.Media.xlarge`width: 100%;`}
 `;
@@ -45,7 +50,7 @@ const NaviGation = styled.nav`
   box-sizing: content-box;
   background-clip: content-box;
   ${props => props.theme.Media.tablet`position: fixed; right: 0; width: 350px;`}
-  ${props => props.theme.Media.desktop`position: fixed; right: 0; width: 350px;`}
+  ${props => props.theme.Media.desktop`position: relative; top: inherit; padding-top: 0; width: ${PxtoRem(250)}; height: auto; display: block;`}
   ${props => props.theme.Media.large`position: relative; top: inherit; padding-top: 0; width: ${PxtoRem(400)}; height: auto; display: block;`}
   ${props => props.theme.Media.xlarge`position: relative; top: inherit; padding-top: 0; width: ${PxtoRem(600)}; height: auto; display: block;`}
   ${props => props.active ? "display: block" : "display: none"}
@@ -57,16 +62,18 @@ const NaviList = styled.ul`
   text-align: right;
   padding: ${PxtoRem(25)};
   box-sizing: border-box;
-  background-color: ${props => props.theme.Color.dark.content};
-  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1);
-  ${props => props.theme.Media.large`box-shadow: none;`}
-  ${props => props.theme.Media.xlarge`box-shadow: none;`}
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.4);
+  ${props => props.theme.Media.desktop`box-shadow: none; background-color: transparent;`}
+  ${props => props.theme.Media.large`box-shadow: none; background-color: transparent;`}
+  ${props => props.theme.Media.xlarge`box-shadow: none; background-color: transparent;`}
   h2{
     border-bottom: 1px solid black;
     padding-bottom: ${PxtoRem(10)};
     text-transform: uppercase;
   }
-  overflow-y: scroll;
+  overflow-y: auto;
+  ${props => props.theme.Media.desktop`overflow-y: inherit;`}
   ${props => props.theme.Media.large`overflow-y: inherit;`}
   ${props => props.theme.Media.xlarge`overflow-y: inherit;`}
 `;
@@ -95,6 +102,7 @@ const MenuBtn = styled.button`
   .material-icons{
     font-size: ${props => props.theme.Fonts.size.h1};
   }
+  ${props => props.theme.Media.desktop`display: none`}
   ${props => props.theme.Media.large`display: none`}
   ${props => props.theme.Media.xlarge`display: none`}
 `;
