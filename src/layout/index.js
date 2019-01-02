@@ -83,7 +83,6 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const LayOutContent = styled(Content)`
-  margin-top: ${PxtoRem(105)};
   ${props => props.theme.Media.large`margin-top: 0;`}
   ${props => props.theme.Media.xlarge`margin-top: 0;`}
 `;
@@ -101,9 +100,10 @@ export default ({ children, site, NavMenu }) => {
       <ThemeProvider theme={Themes}>
         <div className="app-wrapper">
           <GlobalStyle />
-          <Header title={site.title} NavMenu={NavMenu}/>
-          <LayOutContent>{children}</LayOutContent>
-          <Footer/>
+          <LayOutContent>
+            <Header title={site.title} NavMenu={NavMenu}/>
+            {children}
+          </LayOutContent>
         </div>
       </ThemeProvider>
     </>

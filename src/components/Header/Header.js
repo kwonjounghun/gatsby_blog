@@ -5,15 +5,18 @@ import { Content } from "../../styled-components/Common";
 import PxtoRem from "../../modules/PxtoRem";
 
 const HeaderSection = styled.header`
-  width: 100%;
-  height: ${PxtoRem(80)};
+  width: ${PxtoRem(450)};
+  height: 100vh;
+  ${props => props.theme.Media.phone`width: 100%; height: ${PxtoRem(80)}`}
+  ${props => props.theme.Media.tablet`width: 100%; height: ${PxtoRem(80)}`}
+  ${props => props.theme.Media.desktop`width: 100%; height: ${PxtoRem(80)}`}
   background-color: ${props => props.theme.Color.dark.content};
-  right: 0;
   top: 0;
+  left: 0;
   box-shadow: 0px -3px 15px 2px ${props => props.theme.GrayScale.scale9};
   position: fixed;
-  ${props => props.theme.Media.large`position: relative;`}
-  ${props => props.theme.Media.xlarge`position: relative;`}
+  ${props => props.theme.Media.large`position: absolute; padding-top: 0; width: ${PxtoRem(400)}; display: block;`}
+  ${props => props.theme.Media.xlarge`position: absolute; padding-top: 0; width: ${PxtoRem(600)}; display: block;`}
   z-index: 100;
 `;
 
@@ -26,12 +29,13 @@ const Title = styled.h1`
 const NavContent = styled(Content)`
   position: relative;
   height: 100%;
+  ${props => props.theme.Media.large`width: 100%;`}
+  ${props => props.theme.Media.xlarge`width: 100%;`}
 `;
 
 const NaviGation = styled.nav`
   position: fixed;
   display: none;
-  box-sizing: border-box;
   padding-top: ${PxtoRem(80)};
   z-index: 1;
   top: 0;
@@ -42,18 +46,21 @@ const NaviGation = styled.nav`
   background-clip: content-box;
   ${props => props.theme.Media.tablet`position: fixed; right: 0; width: 350px;`}
   ${props => props.theme.Media.desktop`position: fixed; right: 0; width: 350px;`}
-  ${props => props.theme.Media.large`position: absolute; top: inherit; bottom: 0; width: 350px; height: auto; transform: translate(0, 100%); padding-top: ${PxtoRem(25)}; display: block;`}
-  ${props => props.theme.Media.xlarge`position: absolute; top: inherit; bottom: 0; width: 350px; height: auto; transform: translate(0, 100%); padding-top: ${PxtoRem(25)}; display: block;`}
+  ${props => props.theme.Media.large`position: relative; top: inherit; padding-top: 0; width: ${PxtoRem(400)}; height: auto; display: block;`}
+  ${props => props.theme.Media.xlarge`position: relative; top: inherit; padding-top: 0; width: ${PxtoRem(600)}; height: auto; display: block;`}
   ${props => props.active ? "display: block" : "display: none"}
 `;
 
 const NaviList = styled.ul`
   width: 100%;
   height: 100%;
+  text-align: right;
   padding: ${PxtoRem(25)};
   box-sizing: border-box;
   background-color: ${props => props.theme.Color.dark.content};
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.1);
+  ${props => props.theme.Media.large`box-shadow: none;`}
+  ${props => props.theme.Media.xlarge`box-shadow: none;`}
   h2{
     border-bottom: 1px solid black;
     padding-bottom: ${PxtoRem(10)};
@@ -138,7 +145,7 @@ class Header extends Component {
                           <li key={index}>
                             <Link to={`/${item.key}/1`}>
                               {item.key}
-                              {`(${item.count})`}
+                              {/* {`(${item.count})`} */}
                             </Link>
                           </li>
                         );
