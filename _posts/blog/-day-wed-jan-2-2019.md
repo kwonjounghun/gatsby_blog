@@ -9,7 +9,7 @@ Public: false
 tag:
   - Blog
 ---
-# 2019 1월 2일
+# [DAY] Wed Jan 2 2019
 
 ## 번역
 Build native mobile apps using JavaScript and React
