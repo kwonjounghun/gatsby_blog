@@ -3,13 +3,13 @@ path: /blog/
 label: Blog
 category: 1DAY
 date: 2019-01-07T01:32:56.298Z
-title: '[DAY]  Men Jan 7 2019'
+title: '[DAY]  Mon Jan 7 2019'
 thumbnail: /assets/sub06_contents02.jpg
 Public: false
 tag:
   - Blog
 ---
-# [DAY] Men Jan 7 2019
+# [DAY] Mon Jan 7 2019
 
 ## 번역
 
