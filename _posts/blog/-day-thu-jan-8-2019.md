@@ -3,13 +3,13 @@ path: /blog/20190108
 label: Blog
 category: 1DAY
 date: 2019-01-08T14:42:17.464Z
-title: '[DAY] Teu Jan 8 2019'
+title: '[DAY] Tue Jan 8 2019'
 thumbnail: /assets/sub06_contents02.jpg
 Public: true
 tag:
   - Blog
 ---
-# [DAY] Teu Jan 8 2019
+# [DAY] Tue Jan 8 2019
 
 ## 번역
 
