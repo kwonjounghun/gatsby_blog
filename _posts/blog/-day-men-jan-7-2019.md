@@ -19,7 +19,9 @@ tag:
 
 *The apps you are building with React Native aren't mobile web apps because React Native uses the same fundamental UI building blocks as regular iOS and Android apps. Instead of using Swift, Kotlin or Java, you are putting those building blocks together using JavaScript and React.*
 
-React Native 앱은 일반 iOS 및 Android 앱과 동일한 기본 UI 구성 블록을 사용하기 때문에 React Native를 사용하여 작성하는 앱은 모바일 웹 앱이 아니다. Swift, Kotlin 또는 Java를 사용하는 대신에, 당신은 JavaScript와 React를 사용하여 그 빌딩 블록을 결합하는 것이다.
+React Native 앱은 일반 iOS 및 Android 앱과 동일한 기본 UI 구성 블록을 사용하기 때문에 React Native를 사용하여 작성하는 앱은 모바일 웹 앱이 아닙니다. Swift, Kotlin 또는 Java를 사용하는 대신에, 당신은 JavaScript와 React를 사용하여 그 빌딩 블록을 결합하는 것입니다.
+
+javascript와 react를 사용해서 네이티브 ui 구성요소를 결합하는 것입니다.
 
 ## 단어
 
@@ -30,6 +32,10 @@ React Native 앱은 일반 iOS 및 Android 앱과 동일한 기본 UI 구성 블
 2. (가짜인조가 아닌) 진짜의
 
 3. 정말, 아주
+
+#### with 
+
+1. ~와 함
 
 #### put
 
@@ -46,6 +52,10 @@ are not, am not의 축약
 
 1. 근본적
 
+2. 핵심적인, 필수적인
+
+3. 기본적인
+
 #### regular
 
 1. 규칙적
@@ -55,6 +65,10 @@ are not, am not의 축약
 #### Instead
 
 1. 대신에
+
+#### those 
+
+1. 그것들의 
 - - -
 
 ## 그 외의 알게된 것
