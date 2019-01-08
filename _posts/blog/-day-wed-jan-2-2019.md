@@ -14,7 +14,7 @@ tag:
 ## 번역
 Build native mobile apps using JavaScript and React
 
-리엑트와 자바스크립트를 사용하여 기본 모바일 오플리케이션 구출
+리엑트와 자바스크립트를 사용하여 Native 모바일 어플리케이션을 만든다.
 
 ### 단어
 #### bulid 
