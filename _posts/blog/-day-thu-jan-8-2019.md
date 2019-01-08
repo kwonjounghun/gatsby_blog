@@ -13,48 +13,58 @@ tag:
 
 ## 번역
 
-*A React Native app is a real mobile app*
+*Don't waste time recompiling*
 
-리액트 네이티브는 진짜 모바일 앱입니다.
+다시 컴파일하는 데 시간을 낭비하지 마라
 
-*The apps you are building with React Native aren't mobile web apps because React Native uses the same fundamental UI building blocks as regular iOS and Android apps. Instead of using Swift, Kotlin or Java, you are putting those building blocks together using JavaScript and React.*
+*React Native lets you build your app faster. Instead of recompiling, you can reload your app instantly. With Hot Reloading, you can even run new code while retaining your application state. Give it a try - it's a magical experience.*
 
-React Native 앱은 일반 iOS 및 Android 앱과 동일한 기본 UI 구성 블록을 사용하기 때문에 React Native를 사용하여 작성하는 앱은 모바일 웹 앱이 아니다. Swift, Kotlin 또는 Java를 사용하는 대신에, 당신은 JavaScript와 React를 사용하여 그 빌딩 블록을 결합하는 것이다.
+리액트 네이티브는 빠르게 앱을 만드는게 가능합니다. 당신의 앱은 다시 컴파일링 되는 대신에 즉각적으로 리로딩됩니다. Hot Reloading을 이용하면 애플리케이션의 상태를 유지하면서 새로운 코드를 실행할 수 있습니다.
+한번 해봐라. 그것은 마술이다.
 
 ## 단어
 
-#### real
+#### waste
 
-1. (가상허구가 아닌) 진짜의, 현실적인, 실제의, 실재하는
+1. (돈시간 등을 필요 이상으로 들여) 낭비하다
 
-2. (가짜인조가 아닌) 진짜의
+2. (가치를 인정받지 못하거나 엉뚱한 곳에) 헛되이 주다 
 
-3. 정말, 아주
+3. 낭비(하는 행위)
 
-#### put
+4. 낭비(되는 상황)
 
-1. (특정한 장소·위치에) 놓다
+#### Instead 
 
-2. (사물을 억지로) 밀어 넣다
+1. ~대신에
 
-#### aren't
-are not, am not의 축약
+#### instantly
 
-1. 아니다.
+1. 즉각, 즉시
 
-#### fundamental
+#### With 
 
-1. 근본적
+1. ~와
 
-#### regular
+2. ~와 함께
 
-1. 규칙적
+#### even 
 
-2. 잦은, 주기적인, 규칙적인
+1. 심지
 
-#### Instead
+##### 부사
 
-1. 대신에
+1. (예상 밖이나 놀라운 일을 나타내어) …도
+
+2. (비교급을 강조하여) 훨씬
+
+3. 더 정확히 말하면, (심지어) …하기까지 하게
+
+#### retain
+
+1. 유지하다.
+
+2. 함유하다.
 - - -
 
 ## 그 외의 알게된 것
