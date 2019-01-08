@@ -15,7 +15,7 @@ tag:
 
 *Don't waste time recompiling*
 
-다시 컴파일하는 데 시간을 낭비하지 마라
+컴파일을 다시하는 데 시간을 낭비하지 마라
 
 *React Native lets you build your app faster. Instead of recompiling, you can reload your app instantly. With Hot Reloading, you can even run new code while retaining your application state. Give it a try - it's a magical experience.*
 
