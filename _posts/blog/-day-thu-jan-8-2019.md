@@ -5,7 +5,7 @@ category: 1DAY
 date: 2019-01-08T14:42:17.464Z
 title: '[DAY] Tue Jan 8 2019'
 thumbnail: /assets/sub06_contents02.jpg
-Public: true
+Public: false
 tag:
   - Blog
 ---
