@@ -41,7 +41,7 @@ React Native는 Swift, Java 또는 Object-C로 작성된 구성요소와 원활�
 
 #### combines 
 
-1. 겹랍하다.
+1. 결합하다.
 
 2. 병행하다.
 
