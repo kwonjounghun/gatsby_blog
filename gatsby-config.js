@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: "내 블로그"
+    title: "ZENLOG"
   },
   plugins: [
     `gatsby-plugin-netlify-cms`,
