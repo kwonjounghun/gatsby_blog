@@ -23,7 +23,7 @@ const Box = styled.div`
 const Wrap = styled.div`
   width: 100%;
   height: 100%;
-  overflow-y: auto;
+  // overflow-y: auto;
   position: relative;
   padding-right: 1rem;
   ${props => props.theme.Media.xlarge`padding-top: ${PxtoRem(20)};`}
