@@ -11,9 +11,9 @@ import MarkDownStyle from "../../static/assets/style/markdown.css";
 const Box = styled.div`
   padding-top: ${PxtoRem(80)};
   box-sizing: border-box;
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
+  width: 100%;
+  // height: 100vh;
+  // position: fixed;
   top: 0;
   left: 0;
   ${props =>
@@ -35,8 +35,8 @@ const Box = styled.div`
 
 const Wrap = styled.div`
   width: 100%;
-  height: 100%;
-  overflow-y: auto;
+  // height: 100%;
+  // overflow-y: auto;
   position: relative;
 `;
 
