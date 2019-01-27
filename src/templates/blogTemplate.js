@@ -38,6 +38,15 @@ const Wrap = styled.div`
   // height: 100%;
   // overflow-y: auto;
   position: relative;
+  ${props =>
+    props.theme.Media
+      .xlarge`overflow-y: auto; height: 100vh;`}
+  ${props =>
+    props.theme.Media
+      .large`overflow-y: auto; height: 100vh;`}
+  ${props =>
+    props.theme.Media
+      .desktop`overflow-y: auto; height: 100vh;`}
 `;
 
 const Content = styled.div`

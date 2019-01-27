@@ -410,6 +410,7 @@
   .markdown-body pre {
     margin-top: 0;
     margin-bottom: 16px;
+    background-color: transparent;
   }
   
   .markdown-body hr {
@@ -577,7 +578,7 @@
   }
   
   .markdown-body table tr {
-    background-color: #fff;
+    background-color: transparent;
     border-top: 1px solid #c6cbd1;
   }
   
