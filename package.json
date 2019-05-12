@@ -6,7 +6,9 @@
     "develop": "gatsby develop",
     "start": "npm run develop",
     "build": "gatsby build",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.8.0",
@@ -25,5 +27,13 @@
     "react-dom": "^16.5.1",
     "react-helmet": "^5.2.0",
     "styled-components": "^4.1.1"
+  },
+  "devDependencies": {
+    "@storybook/react": "^5.0.11",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addons": "^5.0.11",
+    "@babel/core": "^7.4.4",
+    "babel-loader": "^8.0.6"
   }
 }
