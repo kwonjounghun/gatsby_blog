@@ -1,28 +1,9 @@
 import { css } from "styled-components";
 import PxtoRem from "../modules/PxtoRem";
+import Colors from "open-color";
 
 class Themes {
-  Color = {
-    dark:{
-      background: "#33333d",
-      content: "#373740"
-    },
-    main: {
-      basic: "#fb4180",
-      dark: "#fb4180",
-      light: "#fb4180"
-    },
-    sub: {
-      basic: "blue",
-      dark: "blue",
-      light: "blue"
-    },
-    sub2: {
-      basic: "blue",
-      dark: "blue",
-      light: "blue"
-    }
-  };
+  Color = Colors;
 
   Fonts = {
     family: "'Noto Sans KR', sans-serif",
@@ -90,19 +71,7 @@ class Themes {
       max: 719
     }
   };
-
-  GrayScale = {
-    scale0: "#F8FAFB",
-    scale1: "#F1F5F5",
-    scale2: "#EAEEEF",
-    scale3: "#E1E4E6",
-    scale4: "#CED3D6",
-    scale5: "#A9AFB3",
-    scale6: "#878D91",
-    scale7: "#4D5256",
-    scale8: "#363A3C",
-    scale9: "#292A2B"
-  };
+  
   Media = Object.keys(this.BreakPoint).reduce((acc, label) => {
     acc[label] = (...args) => {
       if (this.BreakPoint[label].min && this.BreakPoint[label].max) {

@@ -58,7 +58,7 @@ const Content = styled.div`
 const BlogPost = styled.div`
   display: block;
   width: 100%;
-  background-color: ${props => props.theme.Color.dark.content};
+  background-color: ${props => props.theme.Color.gray[0]};
 `;
 
 const BlogInfo = styled.div`
@@ -139,7 +139,7 @@ const BlogDate = styled.time`
 const Category = styled.div`
   padding: ${`${PxtoRem(5)} ${PxtoRem(20)}`};
   margin-bottom: ${PxtoRem(10)};
-  background-color: ${props => props.theme.GrayScale.scale6};
+  background-color: ${props => props.theme.Color.gray[6]};
   color: white;
   line-height: 1rem;
   display: inline-block;

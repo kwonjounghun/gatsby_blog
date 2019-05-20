@@ -4,14 +4,15 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Themes from "../styled-components/themes";
 import Helmet from "react-helmet";
+import colors from "open-color";
 
 const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    color: ${props => props.theme.GrayScale.scale0};
+    color: ${props => props.theme.Color.gray[8]};
     font-family: ${props => props.theme.Fonts.family};
-    background-color: ${props => props.theme.Color.dark.background}
+    background-color: ${props => props.theme.Color.gray[1]}
   }
 
   div, section, header, nav, footer, a {
@@ -22,7 +23,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: ${props => props.theme.GrayScale.scale4};
+    color: ${props => props.theme.Color.gray[6]};
   }
 
   p, h1, h2, h3, h4, span{
@@ -31,12 +32,12 @@ const GlobalStyle = createGlobalStyle`
 
   a, a:active, a:hover, a:link {
       line-height: 1.6;
-      color: ${props => props.theme.GrayScale.scale4};
+      color: ${props => props.theme.Color.gray[6]};
       text-decoration: none;
   }
 
   h1, h2, h3, h4{
-    color: ${props => props.theme.GrayScale.scale0};
+    color: ${props => props.theme.Color.gray[8]};
   }
 
   ul, ol, li{
@@ -81,6 +82,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 export default ({ children, site, NavMenu }) => {
+  console.log(colors)
   return (
     <>
       <Helmet>

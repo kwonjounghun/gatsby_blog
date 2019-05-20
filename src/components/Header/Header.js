@@ -9,10 +9,10 @@ const HeaderSection = styled.header`
   height: 100vh;
   ${props => props.theme.Media.phone`width: 100%; height: ${PxtoRem(80)}`}
   ${props => props.theme.Media.tablet`width: 100%; height: ${PxtoRem(80)}`}
-  background-color: ${props => props.theme.Color.dark.content};
+  background-color: ${props => props.theme.Color.gray[0]};
   top: 0;
   left: 0;
-  box-shadow: 0px -3px 15px 2px ${props => props.theme.GrayScale.scale9};
+  box-shadow: 0px -3px 15px 2px ${props => props.theme.Color.gray[3]};
   position: fixed;
   ${props => props.theme.Media.desktop`position: absolute; padding-top: 0; width: ${PxtoRem(250)}; display: block;`}
   ${props => props.theme.Media.large`position: absolute; padding-top: 0; width: ${PxtoRem(400)}; display: block;`}
